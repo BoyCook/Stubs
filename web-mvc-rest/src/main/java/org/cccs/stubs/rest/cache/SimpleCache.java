@@ -1,8 +1,8 @@
-package org.cccs.stubs.soap.cache;
+package org.cccs.stubs.rest.cache;
 
-import org.cccs.domain.Cat;
-import org.cccs.domain.Dog;
-import org.cccs.domain.Person;
+import org.cccs.stubs.rest.domain.Cat;
+import org.cccs.stubs.rest.domain.Dog;
+import org.cccs.stubs.rest.domain.Person;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -10,8 +10,8 @@ import java.util.Map;
 
 /**
  * User: boycook
- * Date: Jul 14, 2010
- * Time: 2:22:28 PM
+ * Date: 15/04/2012
+ * Time: 21:07
  */
 public class SimpleCache {
 
@@ -59,5 +59,5 @@ public class SimpleCache {
 
     public static Collection<Dog> getDogs() {
         return dogs.values();
-    }    
+    }
 }
