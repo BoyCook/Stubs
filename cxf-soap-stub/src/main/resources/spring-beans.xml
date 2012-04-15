@@ -1,0 +1,26 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:jaxws="http://cxf.apache.org/jaxws"
+       xmlns:cxf="http://cxf.apache.org/core"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+          http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.5.xsd
+          http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+          http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd
+          http://www.springframework.org/schema/tx
+          http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+  <import resource="classpath:META-INF/cxf/cxf.xml"/>
+  <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml"/>
+  <import resource="classpath:META-INF/cxf/cxf-servlet.xml"/>
+
+  <!-- Retain versioned endpoints beyond 1st release -->
+  <jaxws:endpoint id="peopleServiceEndPoint-2012-04" implementor="#peopleServicePort" address="/person" wsdlLocation="wsdl/ManagePerson.wsdl"/>
+  <jaxws:endpoint id="catsServiceEndPoint-2012-04" implementor="#catsServicePort" address="/cat" wsdlLocation="wsdl/ManageCat.wsdl"/>
+  <jaxws:endpoint id="dogsServiceEndPoint-2012-04" implementor="#dogsServicePort" address="/dog" wsdlLocation="wsdl/ManageDog.wsdl"/>
+
+  <bean id="peopleServicePort" class="org.cccs.stubs.soap.webservice.PersonServiceImpl" autowire="byName"/>
+  <bean id="catsServicePort" class="org.cccs.stubs.soap.webservice.CatServiceImpl" autowire="byName"/>
+  <bean id="dogsServicePort" class="org.cccs.stubs.soap.webservice.DogServiceImpl" autowire="byName"/>
+</beans>

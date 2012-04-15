@@ -1,0 +1,1 @@
+update company_group set inuse = 1;

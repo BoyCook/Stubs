@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<xsd:schema targetNamespace="http://collaborate.bt.com/domain"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <xsd:import namespace="http://www.w3.org/2001/XMLSchema"/>
+
+   <xsd:complexType name="order">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="id" type="xsd:string"/>
+          <xsd:element minOccurs="1" maxOccurs="1" name="description" type="xsd:string"/>
+          <xsd:element minOccurs="1" maxOccurs="1" name="aEndDeviceId" type="xsd:string"/>
+          <xsd:element minOccurs="1" maxOccurs="1" name="aEndLocation" type="xsd:string"/>
+          <xsd:element minOccurs="1" maxOccurs="1" name="aEndLocationId" type="xsd:string"/>
+          <xsd:element minOccurs="1" maxOccurs="1" name="aEndPortId" type="xsd:string"/>
+          <xsd:element minOccurs="1" maxOccurs="1" name="zEndDeviceType" type="xsd:string"/>
+          <xsd:element minOccurs="1" maxOccurs="1" name="zEndDeviceId" type="xsd:string"/>
+          <xsd:element minOccurs="1" maxOccurs="1" name="zEndLocation" type="xsd:string"/>
+          <xsd:element minOccurs="1" maxOccurs="1" name="zEndLocationId" type="xsd:string"/>
+          <xsd:element minOccurs="1" maxOccurs="1" name="zEndShelfId" type="xsd:string"/>
+          <xsd:element minOccurs="1" maxOccurs="1" name="zEndSlotId" type="xsd:string"/>
+          <xsd:element minOccurs="1" maxOccurs="1" name="bandwidth" type="xsd:string"/>
+        </xsd:sequence>
+      </xsd:complexType>    
+</xsd:schema>
