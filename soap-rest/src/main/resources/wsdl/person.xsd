@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<xsd:schema targetNamespace="http://cccs.org/domain"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:import namespace="http://www.w3.org/2001/XMLSchema"/>
+
+    <xsd:complexType name="person">
+        <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="id" type="xsd:string"/>
+            <xsd:element minOccurs="1" maxOccurs="1" name="foreName" type="xsd:string"/>
+            <xsd:element minOccurs="1" maxOccurs="1" name="surName" type="xsd:string"/>
+            <xsd:element minOccurs="1" maxOccurs="1" name="phoneNumber" type="xsd:string"/>
+            <xsd:element minOccurs="1" maxOccurs="1" name="email" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

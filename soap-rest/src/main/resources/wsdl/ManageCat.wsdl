@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions
+        targetNamespace="http://cccs.org/cat"
+        xmlns:tns="http://cccs.org/cat"
+        xmlns:dom="http://cccs.org/domain"
+        xmlns:cat="http://cccs.org/cat/schema"
+        xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+        xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+    <wsdl:types>
+        <xsd:schema
+                elementFormDefault="qualified"
+                targetNamespace="http://cccs.org/cat/schema"
+                xmlns:dom="http://cccs.org/domain"
+                xmlns:cat="http://cccs.org/cat/schema">
+            <xsd:import namespace="http://cccs.org/domain" schemaLocation="cat.xsd"/>
+            <xsd:import namespace="http://www.w3.org/2001/XMLSchema"/>
+            <xsd:element name="stringType" type="xsd:string"/>
+        </xsd:schema>
+    </wsdl:types>
+
+    <wsdl:message name="createCatRequest">
+        <wsdl:part name="cat" type="dom:cat"/>
+    </wsdl:message>
+
+    <wsdl:message name="createCatResponse">
+        <wsdl:part name="response" type="dom:cat"/>
+    </wsdl:message>
+
+    <wsdl:message name="getCatRequest">
+        <wsdl:part name="catId" type="xsd:string"/>
+    </wsdl:message>
+
+    <wsdl:message name="getCatResponse">
+        <wsdl:part name="response" type="dom:cat"/>
+    </wsdl:message>
+
+    <wsdl:portType name="CatPort">
+        <wsdl:operation name="createCat">
+            <wsdl:input name="createCatRequest" message="tns:createCatRequest"/>
+            <wsdl:output name="createCatResponse" message="tns:createCatResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="getCat">
+            <wsdl:input name="getCatRequest" message="tns:getCatRequest"/>
+            <wsdl:output name="getCatResponse" message="tns:getCatResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:binding name="CatBinding" type="tns:CatPort">
+        <soap:binding style="rpc"
+                      transport="http://schemas.xmlsoap.org/soap/http"/>
+
+        <wsdl:operation name="createCat">
+            <soap:operation soapAction="" style="rpc"/>
+            <wsdl:input name="createCatRequest">
+                <soap:body
+                        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                        namespace="http://cccs.org/cat"
+                        use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="createCatResponse">
+                <soap:body
+                        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                        namespace="http://cccs.org/cat"
+                        use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+
+        <wsdl:operation name="getCat">
+            <soap:operation soapAction="" style="rpc"/>
+            <wsdl:input name="getCatRequest">
+                <soap:body
+                        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                        namespace="http://cccs.org/cat"
+                        use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="getCatResponse">
+                <soap:body
+                        encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"
+                        namespace="http://cccs.org/cat"
+                        use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:service name="CatService">
+        <wsdl:port name="CatPort" binding="tns:CatBinding">
+            <soap:address location="http://cccs.org/cat"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
