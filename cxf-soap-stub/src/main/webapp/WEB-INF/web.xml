@@ -5,7 +5,7 @@
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
       http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
 
-  <display-name>static-data</display-name>
+  <display-name>CXF SOAP service</display-name>
 
   <context-param>
 		<param-name>contextConfigLocation</param-name>

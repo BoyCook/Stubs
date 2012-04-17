@@ -16,7 +16,6 @@
                 xmlns:dom="http://cccs.org/domain"
                 xmlns:person="http://cccs.org/person/schema">
             <xsd:import namespace="http://cccs.org/domain" schemaLocation="person.xsd"/>
-            <xsd:import namespace="http://collaborate.bt.com/domain" schemaLocation="order.xsd"/>
             <xsd:import namespace="http://www.w3.org/2001/XMLSchema"/>
             <xsd:element name="stringType" type="xsd:string"/>
         </xsd:schema>

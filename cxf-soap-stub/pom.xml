@@ -28,8 +28,11 @@
     </parent>
     <properties>
         <jetty.version>6.1.11</jetty.version>
-        <cxf.version>2.1.4</cxf.version>
-        <spring.version>2.5.5</spring.version>
+		<cxf.version>2.6.0</cxf.version>
+        <spring.core.version>2.5.6</spring.core.version>
+        <!--<spring.version>2.5.5</spring.version>-->
+        <spring.version>3.1.1.RELEASE</spring.version>
+        <junit.version>4.9</junit.version>
         <filter>local</filter>
     </properties>
     <dependencies>
@@ -43,11 +46,11 @@
             <artifactId>commons-httpclient</artifactId>
             <version>3.1</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring</artifactId>
-            <version>${spring.version}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring</artifactId>-->
+            <!--<version>${spring.core.version}</version>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
@@ -136,7 +139,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.4</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
 
