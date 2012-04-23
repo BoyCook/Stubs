@@ -76,12 +76,6 @@
         </dependency>
         <!-- Spring END-->
 
-        <dependency>
-            <groupId>javassist</groupId>
-            <artifactId>javassist</artifactId>
-            <version>3.12.0.GA</version>
-        </dependency>
-
         <!-- Commons -->
         <dependency>
             <groupId>commons-dbcp</groupId>
@@ -114,12 +108,6 @@
                     <artifactId>slf4j-jdk14</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjrt</artifactId>
-            <version>1.6.2</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.thoughtworks.xstream</groupId>
